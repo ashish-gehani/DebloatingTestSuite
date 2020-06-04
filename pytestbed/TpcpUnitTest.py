@@ -45,6 +45,23 @@ class TpcpTestCase(unittest.TestCase):
         # exe saves the name of the debloated executable file to run
         self.exe = abspath(exe)
         
+    @classmethod
+    def setUpClass(cls, dirname):
+        cls._originaldir = os.getcwd()
+        cls._workdir = 'pytestbed/' + dirname + '/'
+        cls._tmpdir = tempfile.TemporaryDirectory()
+        
+    @classmethod
+    def tearDownClass(cls):
+        # restore old working directory
+        os.chdir(cls._originaldir)
+        # remove the tmpdir
+        cls._tmpdir.cleanup()
+        
+    def setUp(self):
+        # reset dir, so we're not stuck in a non-existent temp dir
+        os.chdir(self._originaldir)
+        
     # allows this test case to set whether it should pass or fail
     # depending on initial conditions
     # -- ALL subclasses should use this assertBehavior or assertBoolean

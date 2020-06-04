@@ -23,8 +23,6 @@ class TestTarCompareFile(TpcpTestCase):
     def setUp(self):
         # reset dir, so we're not stuck in a non-existent temp dir
         os.chdir(self._originaldir)
-        
-    ### define real tests below!
     
     # tests replacing of contents of a file inside the archive
     # tar --compare --file=test.tar [FILE]
