@@ -14,7 +14,7 @@ from pytestbed.tar_tests.TestSpecializedTarUpdateFile import TestSpecializedTarU
 from pytestbed.tar_tests.TestSpecializedTarDeleteFile import TestSpecializedTarDeleteFile
 from pytestbed.tar_tests.TestSpecializedTarCompareFile import TestSpecializedTarCompareFile
 
-def SpecializationScenario(path):
+def specializationScenario(path):
     suite = TpcpTestSuite()
     suite.addTest(TestSpecializedTarExtractFile(succeeds=True, exe=path))
     suite.addTest(TestSpecializedTarGetFile(succeeds=True, exe=path))
