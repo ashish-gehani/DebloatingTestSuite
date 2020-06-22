@@ -28,6 +28,9 @@ class TestSpecializedTarUpdateFile(TpcpTestCase):
     
     # tests replacing of contents of a file inside the archive
     # tar --update -f test.tar file1.txt
+    #  
+    # specialized invocation:
+    # tar_update test.tar file1.txt
     def runTest(self):
         # copy files to temp dir
         subprocess.run(["cp", "./"+self._workdir+"test.tar", self._tmpdir.name])

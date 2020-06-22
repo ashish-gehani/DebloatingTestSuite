@@ -26,6 +26,9 @@ class TestSpecializedTarCompareFile(TpcpTestCase):
     
     # tests replacing of contents of a file inside the archive
     # tar --compare --file=test.tar [FILE]
+    # 
+    # specialized invocation:
+    # tar_compare test.tar [FILE]
     def runTest(self):
         # copy files to temp dir
         subprocess.run(["cp", "./"+self._workdir+"test.tar", self._tmpdir.name])

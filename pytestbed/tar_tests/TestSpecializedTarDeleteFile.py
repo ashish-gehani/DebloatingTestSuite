@@ -28,6 +28,9 @@ class TestSpecializedTarDeleteFile(TpcpTestCase):
     
     # tests deleting a file inside the archive
     # tar --delete --file=test.tar file1.txt
+    #  
+    # specialized invocation:
+    # tar_delete test.tar file1.txt
     def runTest(self):
         # copy files to temp dir
         subprocess.run(["cp", "./"+self._workdir+"test.tar", self._tmpdir.name])

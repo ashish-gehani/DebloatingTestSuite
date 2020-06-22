@@ -27,7 +27,10 @@ class TestSpecializedTarCreateDirFile(TpcpTestCase):
     ### define real tests below!
     
     # tests extracting from a known tar file and testing contents
-    # tar --create --file tmpfilesdir
+    # tar --create --file test.tar tmpfilesdir
+    #  
+    # specialized invocation:
+    # tar_create_dir test.tar tmpfilesdir
     def runTest(self):
         # copy files to temp dir
         subprocess.run(["mkdir", "-p", self._tmpdir.name + "/tmpfilesdir"])

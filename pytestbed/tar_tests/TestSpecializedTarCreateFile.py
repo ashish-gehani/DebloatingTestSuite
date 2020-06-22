@@ -28,6 +28,9 @@ class TestSpecializedTarCreateFile(TpcpTestCase):
     
     # tests extracting from a known tar file and testing contents
     # tar --create --file=test.tar file1.txt file2.txt
+    #  
+    # specialized invocation:
+    # tar_create test.tar file1.txt file2.txt
     def runTest(self):
         # copy files to temp dir
         subprocess.run(["cp", "./"+self._workdir+"file1.txt", self._tmpdir.name])
